@@ -1,100 +1,135 @@
-﻿# The script of the game goes in this file.
+﻿# Kamu dapat taruh script game mu di file ini.
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# Deklarasikan gambar di bawah line ini, menggunakan pernyataan image.
+# cnth. image eileen happy = "eileen_happy.png"
 
-define a = Character("Aria")
-define d = Character("Dr. Hikari")
-define b = Character("Bryan")
+# Deklarasikan karakter yang digunakan di game.
+define ak = Character("Asep Kuda", color="#000000")
+define a = Character('Aria', color="#967509")
+define q = Character('Quantumia', color="#250a5f")
 
-# The game starts here.
+image giza = Movie(play="pyramid480.webm", pos=(525,200), anchor=(0,0))
 
+# Game dimulai disini.
 label start:
 
-    # Prolog...
-    "Dalam dunia yang penuh dengan misteri dan keajaiban, terdapat sebuah sekolah khusus yang menyimpan rahasia tak terduga. Sekolah ini tidak biasa, karena di dalamnya terdapat sesuatu yang disebut 'Pintu Gerbang Alam Semesta.' Pintu ini, suatu keajaiban yang aneh, membawa karakter utama kita, Aria, ke dalam petualangan yang melibatkan pengetahuan, budaya, dan sejarah di seluruh dunia."
+    play music bglethal
 
-    "Aria, seorang siswi yang penuh semangat untuk belajar, menemukan Pintu Gerbang Alam Semesta secara tak sengaja. Tanpa menyadari kekuatan besar di baliknya, dia bersiap-siap untuk memulai perjalanan yang akan mengubah hidupnya."
+    scene black with fade
 
-    "Episode 1: 'Pembukaan Pintu Alam Semesta'"
+    "Di sebuah sekolah biasa, Aria, seorang siswi yang penuh semangat untuk belajar, baru saja tiba di laboratorium Profesora Quantumia, ilmuwan eksentrik yang telah lama dikenalnya."
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    play sound walk loop
 
-    scene bg room
+    "Begitu Aria memasuki lab, Profesora Quantumia langsung mengajaknya untuk sebuah petualangan yang menakjubkan."
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "aria.png" to the images
-    # directory.
+    stop sound
 
-    show a at left
-    "Aria: (dengan penuh keheranan) 'Apa ini? Mengapa tidak pernah kudengar sebelumnya?'"
+    play sound dooropen
 
-    # Display lines of dialogue.
+    scene bg lab with dissolve
 
-    "Suatu hari, di sekolah khusus itu, Aria tanpa sengaja menemukan ruang tersembunyi yang tidak terlihat oleh mata manusia biasa. Di ruang itu, terdapat Pintu Gerbang Alam Semesta."
+    show mry_goldsect_happylaugh at left
 
-    show a at left
-    "Aria: (dengan penuh keheranan) 'Apa ini? Mengapa tidak pernah kudengar sebelumnya?'"
+    a "Hai Profesor Quantumia!"
 
-    "Tanpa berpikir panjang, Aria memutuskan untuk membuka pintu misterius tersebut. Begitu pintu terbuka, dia merasakan kekuatan ajaib yang menyeretnya masuk ke dalam sebuah portal cahaya yang mempesona."
+    show lxc_neutral at right
 
-    "Sesaat kemudian, Aria mendapati dirinya berdiri di tengah-tengah hutan hujan Amazon. Keindahan alam yang luar biasa dan suara alam yang merdu memenuhi telinganya."
+    q "Hei Aria! Selamat datang di laboratoriumku. Kebetulan sekali kamu datang kesini."
 
-    show a at left
-    "Aria: 'Ini... ini luar biasa! Tapi, bagaimana aku bisa berada di sini?'"
+    show mry_goldsect_surprised at left
 
-    # Seorang pria muncul dari bayangan. Dia mengenakan pakaian eksplorasi dan tersenyum ramah.
+    a "Emang kenapa profesor?"
 
-    show d at right
-    "Dr. Hikari: 'Selamat datang, Aria. Kamu telah membuka Pintu Gerbang Alam Semesta. Bersiaplah untuk petualangan ilmiah dan pengetahuan yang tak terduga.'"
+    q "Nih, aku punya barang keren nih. Ini namanya \"Teleporter\"."
 
-    show a at left
-    "Aria: 'Siapa Anda? Dan mengapa saya di sini?'"
+    q "Ini adalah alat yang bisa membuat kita berpindah tempat ke mana saja tanpa harus repot."
 
-    show d at right
-    "Dr. Hikari: 'Saya Dr. Hikari, profesor eksplorasi di sekolah ini. Kamu di sini untuk menjelajahi pengetahuan di seluruh dunia. Mari kita mulai petualangan ini!'"
+    a "WoW, terdengarnya keren banget! jadi bagaimana cara kerja alatnya?"
 
-    "Dr. Hikari menjelaskan pada Aria tentang keberadaan Pintu Gerbang Alam Semesta dan mengapa dia dipilih untuk menjalani petualangan ini. Dengan antusias, Aria setuju untuk menjelajahi tempat-tempat bersejarah."
+    q "Jadi begini, Teleporter ini pakai baru yang udah aku ciptain."
 
-    "Bersama-sama, mereka melangkah keluar dari hutan Amazon dan tiba di Piramida Mesir. Puncak piramida menawarkan pemandangan matahari terbenam yang memukau."
+    q "Kamu tinggal set koordinatnya, kita bisa langsung pindah ke tempat yang kita mau."
 
-    show a at left
-    "Aria: 'Wow, pemandangannya sungguh mengagumkan! Piramida ini lebih besar dari yang pernah saya bayangkan.'"
+    q "Nah, ideku sekarang, bagaimana kalau kita bareng-bareng nyobain ini?"
 
-    show d at right
-    "Dr. Hikari: 'Kalian berdua, kita tidak hanya datang ke sini untuk menikmati pemandangan. Ada sesuatu yang menarik perhatian saya. Lihatlah ke arah matahari terbenam di sana.'"
+    a "Serius? Itu keren banget, Profesor. Emang kita mau pergi kemana dulu?"
 
-    "Ketiganya memandang ke arah matahari yang perlahan tenggelam di cakrawala."
+    q "Mari kita coba mesin ini dengan pergi ke mesir!"
 
-    show a at left
-    "Aria: 'Ada apa dengan matahari terbenam ini?'"
+    
+    menu:
+        
+        "Kenapa harus ke mesir prof?":
+            jump choice1_answer
+        "Sepertinya menarik.....":        
+            jump choice1_answer
 
-    show d at right
-    "Dr. Hikari: 'Piramida Mesir adalah salah satu struktur kuno yang diatur dengan presisi astronomi. Matahari terbenam ini memberi petunjuk pada kalender kuno mereka. Kalian dapat belajar banyak tentang astronomi dan sistem penanggalan dari sini.'"
+    label choice1_answer:
+        
+        q "Mesir memiliki banyak keunikan, dari sungai nil, sejarah dan peninggalan sejarahnya seperti piramida." 
 
-    "Bryan, teman sekelas Aria, yang tanpa sengaja ikut dalam petualangan ini, berkomentar, 'Benar-benar luar biasa! Tapi, ada apa di sini, Profesor?'"
+        jump choice1_done
 
-    show d at right
-    "Dr. Hikari: 'Menarik sekali! Bagaimana kita bisa belajar lebih lanjut?'"
+    label choice1_done:
 
-    show d at right
-    "Dr. Hikari: 'Mari kita turun ke dalam piramida ini. Di dalam, terdapat ruang khusus yang memuat pengetahuan mendalam tentang astronomi kuno Mesir. Ayo jelajahi bersama!'"
+        a "Kalo begitu kita akan pergi kapan prof?"
 
-    "Seiring mereka masuk ke dalam piramida, suasana gelap berganti dengan sorotan lampu di sekitar mereka. Mereka mulai membaca hieroglif dan menemukan mekanisme kuno yang mengungkapkan rahasia astronomi Mesir."
+        q "Kita akan pergi sekarang !!"
 
-    show a at left
-    "Aria: 'Ini luar biasa, Profesor! Saya tidak pernah tahu seberapa maju pengetahuan mereka dalam astronomi.'"
+        a "APAA SEKARANG!!!"
 
-    show b at center
-    "Bryan: 'Sungguh menakjubkan! Ini benar-benar petualangan pengetahuan yang menyenangkan.'"
+    
 
-    show d at right
-    "Dr. Hikari: 'Dan ini baru awalnya. Pintu Gerbang Alam Semesta masih membuka pintu ke destinasi-destinasi luar biasa lainnya. Siapkah kalian untuk terus menjelajahi dan memperdalam pengetahuan?'"
+    "Bersama-sama, Aria dan Profesora Quantumia memasuki teleporter dan memulai mesinnya."
 
-    "Ketiganya berpandangan dengan semangat, siap melangkah ke petualangan berikutnya."
+    play sound teleport loop
 
-    "Cerita ini mengajak pemain untuk menjelajahi pengetahuan melalui petualangan yang menarik dan edukatif di berbagai tempat bersejarah di seluruh dunia."
+    "Lalu memasukan koordinat piramid giza di mesir. Tiba2 profesor menyalakan mesin dan memindahkan mereka ke mesir tepatnya didekat piramida."
+
+    scene black with fade
+
+    scene bg dune with dissolve
+
+    stop sound
+
+    play music egypt
+
+    show mry_goldsect_neutral at left
+
+    show lxc_neutral at right    
+
+
+    q "ALAT KU BERHASIL!!!"
+
+    a "Setidaknya kita mendarat dengan mulus."
+
+    a "WoW, pemandangannya sungguh indah sekali."
+
+    q "Kita tidak hanya datang ke sini untuk menikmati pemandangan. Ada sesuatu yang menarik perhatian saya. Lihatlah ke arah matahari terbenam di sana."
+
+    a "Apakah itu piramida giza?"
+
+    show giza behind q
+
+    q "benar itu, Piramida Giza adalah salah satu keajaiban dunia kuno yang paling terkenal."
+
+    q "Dalam sejarah Ini dibangun sekitar tahun 2580-2560 SM untuk Pharaoh Khufu. Piramida ini memiliki tinggi lebih dari 138 meter dan sebelumnya lebih tinggi lagi dengan penutup piramida yang hilang."    
+
+    q "selanjutnya kitanya kita pergi ke jepang"
+
+    a "JEPANG !!!"
+
+    q "Benar! Kita akan pergi ke kuil yang ada di kyoto jepang."
+
+    a "Lets Gooo!!!"
+
+    "Bersama-sama, Aria dan Profesora Quantumia memasuki teleporter dan memulai mesinnya, lalu memasukan koordinat kuil kyoto di jepang."
+
+    play sound teleport loop
+
+    scene black with dissolve
+
+    "To be continued{cps=5}..........{/cps}"
 
     return
